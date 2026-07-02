@@ -1,0 +1,114 @@
+.ds-media-placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: var(--component-media-placeholder-border-radius);
+  background-color: var(--component-media-placeholder-background);
+  font-family: var(--font-family-base);
+}
+
+.ds-media-placeholder--image,
+.ds-media-placeholder--video-overlay,
+.ds-media-placeholder--video-label {
+  background-color: var(--component-media-placeholder-background);
+}
+
+.ds-media-placeholder--ratio-1x1 {
+  aspect-ratio: 1 / 1;
+}
+
+.ds-media-placeholder--ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.ds-media-placeholder--ratio-4x3 {
+  aspect-ratio: 4 / 3;
+}
+
+.ds-media-placeholder--ratio-3x4 {
+  aspect-ratio: 3 / 4;
+}
+
+.ds-media-placeholder__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ds-media-placeholder__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--component-media-placeholder-icon-size);
+  height: var(--component-media-placeholder-icon-size);
+  color: var(--component-media-placeholder-icon-color);
+}
+
+.ds-media-placeholder__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-media-placeholder__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--component-media-placeholder-overlay-background);
+  opacity: var(--component-media-placeholder-overlay-opacity);
+}
+
+.ds-media-placeholder__play {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--component-media-placeholder-overlay-text-color);
+}
+
+.ds-media-placeholder__play--default {
+  width: var(--component-media-placeholder-play-icon-size-default);
+  height: var(--component-media-placeholder-play-icon-size-default);
+}
+
+.ds-media-placeholder__play--large {
+  width: var(--component-media-placeholder-play-icon-size-large);
+  height: var(--component-media-placeholder-play-icon-size-large);
+}
+
+.ds-media-placeholder__play svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-media-placeholder__overlay-duration {
+  position: absolute;
+  right: var(--spacing-3);
+  bottom: var(--spacing-2);
+  color: var(--component-media-placeholder-overlay-text-color);
+  font-size: var(--component-media-placeholder-overlay-font-size);
+}
+
+.ds-media-placeholder__label-badge {
+  position: absolute;
+  right: var(--spacing-2);
+  bottom: var(--spacing-2);
+  display: flex;
+  align-items: center;
+  gap: var(--component-media-placeholder-label-badge-gap);
+  padding: var(--spacing-1) var(--component-media-placeholder-label-badge-padding-x);
+  border-radius: var(--component-media-placeholder-label-badge-border-radius);
+  background-color: var(--component-media-placeholder-label-badge-background);
+  color: var(--component-media-placeholder-label-badge-text-color);
+  font-size: var(--component-media-placeholder-label-badge-font-size);
+}
+
+.ds-media-placeholder__label-badge svg {
+  width: var(--component-media-placeholder-label-badge-icon-size);
+  height: var(--component-media-placeholder-label-badge-icon-size);
+}

@@ -1,0 +1,36 @@
+.ds-tab-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--component-tab-bar-background);
+  border-top: 1px solid var(--component-tab-bar-border-top);
+  font-family: var(--font-family-base);
+}
+
+.ds-tab-bar__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--component-tab-bar-tabs-height);
+  background-color: var(--component-tab-bar-background);
+}
+
+.ds-tab-bar__home-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--component-tab-bar-home-indicator-height);
+  padding-top: var(--component-tab-bar-home-indicator-padding-top);
+  padding-bottom: var(--component-tab-bar-home-indicator-padding-bottom);
+  background-color: var(--component-tab-bar-background);
+  box-sizing: border-box;
+}
+
+.ds-tab-bar__home-indicator-bar {
+  width: var(--component-tab-bar-home-indicator-bar-width);
+  height: var(--component-tab-bar-home-indicator-bar-height);
+  border-radius: var(--border-radius-full);
+  background-color: var(--component-tab-bar-home-indicator-bar-color);
+}

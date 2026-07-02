@@ -1,0 +1,17 @@
+.ds-section-header {
+  display: flex;
+  align-items: center;
+  height: var(--component-section-header-height);
+  padding: 0 var(--component-section-header-padding-x);
+  box-sizing: border-box;
+  background-color: var(--component-section-header-background);
+}
+
+.ds-section-header__label {
+  font-family: var(--font-family-base);
+  color: var(--component-section-header-label-color);
+  font-size: var(--component-section-header-label-font-size);
+  font-weight: var(--component-section-header-label-font-weight);
+  letter-spacing: var(--component-section-header-label-letter-spacing);
+  text-transform: uppercase;
+}

@@ -1,0 +1,102 @@
+.ds-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--component-radio-gap);
+}
+
+.ds-radio__control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--component-radio-size);
+  height: var(--component-radio-size);
+  box-sizing: border-box;
+  border-radius: 9999px;
+  border: 2px solid var(--component-radio-border-default);
+  transition: border-color 150ms ease;
+}
+
+.ds-radio__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ds-radio__dot {
+  width: 50%;
+  height: 50%;
+  border-radius: 9999px;
+  background-color: var(--component-radio-fill-default);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 100ms ease,
+    transform 100ms ease;
+}
+
+.ds-radio__input:checked ~ .ds-radio__dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ds-radio__input:checked + .ds-radio__control,
+.ds-radio__control:has(.ds-radio__input:checked) {
+  border-color: var(--component-radio-fill-default);
+}
+
+.ds-radio__control--emphasis .ds-radio__dot {
+  background-color: var(--component-radio-fill-emphasis);
+}
+
+.ds-radio__control--emphasis:has(.ds-radio__input:checked) {
+  border-color: var(--component-radio-fill-emphasis);
+}
+
+.ds-radio__control--error {
+  border-color: var(--component-radio-border-error);
+}
+
+.ds-radio__control--error .ds-radio__dot {
+  background-color: var(--component-radio-fill-error);
+}
+
+.ds-radio__control--error:has(.ds-radio__input:checked) {
+  border-color: var(--component-radio-fill-error);
+}
+
+.ds-radio__input:focus-visible ~ .ds-radio__dot,
+.ds-radio__control:has(.ds-radio__input:focus-visible) {
+  outline: 2px solid var(--component-radio-focus-ring-color);
+  outline-offset: 2px;
+}
+
+.ds-radio__input:disabled ~ .ds-radio__dot {
+  background-color: var(--component-radio-fill-disabled);
+}
+
+.ds-radio__control:has(.ds-radio__input:disabled) {
+  border-color: var(--component-radio-border-disabled);
+}
+
+.ds-radio__input:disabled {
+  cursor: not-allowed;
+}
+
+.ds-radio__input:disabled ~ .ds-radio__label,
+.ds-radio:has(.ds-radio__input:disabled) .ds-radio__label {
+  color: var(--component-radio-label-color-disabled);
+  cursor: not-allowed;
+}
+
+.ds-radio__label {
+  font-family: var(--font-family-base);
+  font-size: var(--component-radio-label-font-size);
+  color: var(--component-radio-label-color);
+  cursor: pointer;
+}

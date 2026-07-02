@@ -1,0 +1,176 @@
+/**
+ * Dropdown reuses Text field's component tokens for the closed-field look
+ * (see the component doc comment) and defines its own tokens only for the
+ * fixed height and the open menu/menu-item subcomponents.
+ */
+
+.ds-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--font-family-base);
+}
+
+.ds-dropdown__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: var(--spacing-2) var(--component-text-field-padding);
+}
+
+.ds-dropdown__label {
+  color: var(--component-text-field-label-color);
+  font-size: var(--component-text-field-label-font-size);
+}
+
+.ds-dropdown__detail {
+  color: var(--component-text-field-detail-color);
+  font-size: var(--component-text-field-label-font-size);
+}
+
+.ds-dropdown__field {
+  display: flex;
+  align-items: center;
+  gap: var(--component-text-field-gap);
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--component-dropdown-height);
+  padding: var(--component-text-field-padding);
+  background-color: var(--component-text-field-background);
+  border: 1px solid var(--component-text-field-border);
+  border-radius: var(--component-text-field-border-radius);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.ds-dropdown__field:hover:not(.ds-dropdown__field--disabled) {
+  border-color: var(--component-text-field-border-hover);
+}
+
+.ds-dropdown__field:focus-visible,
+.ds-dropdown__field--open {
+  border-color: var(--component-text-field-border-focus);
+  outline: var(--component-text-field-focus-ring-width) solid
+    var(--component-text-field-focus-ring-color);
+  outline-offset: var(--component-text-field-focus-ring-offset);
+}
+
+.ds-dropdown__field--error {
+  border-color: var(--component-text-field-border-error);
+}
+
+.ds-dropdown__field--disabled {
+  background-color: var(--component-text-field-background-disabled);
+  border-color: var(--component-text-field-border-disabled);
+  cursor: not-allowed;
+}
+
+.ds-dropdown__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--component-dropdown-icon-size);
+  height: var(--component-dropdown-icon-size);
+  color: var(--component-text-field-placeholder-color);
+}
+
+.ds-dropdown__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-dropdown__value {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--component-text-field-font-size);
+  color: var(--component-text-field-text-color);
+}
+
+.ds-dropdown__value--placeholder {
+  color: var(--component-text-field-placeholder-color);
+}
+
+.ds-dropdown__field--disabled .ds-dropdown__value {
+  color: var(--component-text-field-text-color-disabled);
+}
+
+.ds-dropdown__menu {
+  position: absolute;
+  top: calc(100% + var(--spacing-1));
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-overlay);
+  margin: 0;
+  padding: var(--spacing-1) 0;
+  list-style: none;
+  background-color: var(--component-dropdown-menu-background);
+  border: 1px solid var(--component-dropdown-menu-border);
+  border-radius: var(--component-dropdown-menu-border-radius);
+  box-shadow: var(--component-dropdown-menu-shadow);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.ds-dropdown__menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: var(--component-dropdown-menu-item-gap);
+  padding: var(--component-dropdown-menu-item-padding);
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ds-dropdown__menu-item:hover:not(:disabled),
+.ds-dropdown__menu-item:focus-visible {
+  background-color: var(--component-dropdown-menu-item-background-focused);
+}
+
+.ds-dropdown__menu-item--selected {
+  background-color: var(--component-dropdown-menu-item-background-focused);
+}
+
+.ds-dropdown__menu-item:disabled {
+  cursor: not-allowed;
+}
+
+.ds-dropdown__menu-item:disabled .ds-dropdown__menu-item-label,
+.ds-dropdown__menu-item:disabled .ds-dropdown__menu-item-description {
+  color: var(--component-dropdown-menu-item-text-color-disabled);
+}
+
+.ds-dropdown__menu-item-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ds-dropdown__menu-item-label {
+  color: var(--component-dropdown-menu-item-label-color);
+  font-size: var(--component-dropdown-menu-item-label-font-size);
+}
+
+.ds-dropdown__menu-item-description {
+  color: var(--component-dropdown-menu-item-description-color);
+  font-size: var(--component-dropdown-menu-item-description-font-size);
+}
+
+.ds-dropdown__footer {
+  padding: 6px var(--component-text-field-padding) 0;
+  color: var(--component-text-field-footer-color);
+  font-size: var(--component-text-field-footer-font-size);
+}
+
+.ds-dropdown__footer--error {
+  color: var(--component-dropdown-footer-error-color);
+}

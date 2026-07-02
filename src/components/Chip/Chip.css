@@ -1,0 +1,99 @@
+.ds-chip {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--component-chip-height);
+  border-radius: var(--component-chip-border-radius);
+  gap: var(--component-chip-gap);
+  font-family: var(--font-family-base);
+  font-size: var(--component-chip-font-size);
+  font-weight: var(--component-chip-font-weight);
+  background-color: var(--component-chip-background);
+  border: 1px solid var(--component-chip-border);
+  color: var(--component-chip-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button.ds-chip {
+  appearance: none;
+}
+
+.ds-chip:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.ds-chip__icon {
+  display: flex;
+  align-items: center;
+  width: var(--component-chip-action-lead-icon-size);
+  height: var(--component-chip-action-lead-icon-size);
+}
+
+.ds-chip__icon--filter {
+  width: var(--component-chip-filter-lead-icon-size);
+  height: var(--component-chip-filter-lead-icon-size);
+}
+
+.ds-chip__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-chip__remove-icon {
+  width: var(--component-chip-remove-icon-size);
+  height: var(--component-chip-remove-icon-size);
+  display: block;
+}
+
+.ds-chip--input {
+  padding-left: var(--component-chip-padding-input-left);
+  padding-right: var(--component-chip-padding-input-right);
+  cursor: default;
+}
+
+.ds-chip--filter {
+  padding-left: var(--component-chip-padding-filter);
+  padding-right: var(--component-chip-padding-filter);
+}
+
+.ds-chip--filter.ds-chip--has-icon {
+  padding-left: var(--component-chip-padding-filter-icon-left);
+}
+
+.ds-chip--action {
+  padding-left: var(--component-chip-padding-action-left);
+  padding-right: var(--component-chip-padding-action-right);
+}
+
+.ds-chip__remove {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ds-chip__remove:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.ds-chip--selected {
+  background-color: var(--component-chip-background-selected);
+  border-color: var(--component-chip-border-selected);
+  color: var(--component-chip-text-selected);
+}
+
+.ds-chip--disabled,
+.ds-chip__remove:disabled {
+  background-color: var(--component-chip-background-disabled);
+  border-color: var(--component-chip-border-disabled);
+  color: var(--component-chip-text-disabled);
+  cursor: not-allowed;
+}

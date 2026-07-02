@@ -1,0 +1,147 @@
+/**
+ * SearchField reuses Text field's component tokens for anything visually
+ * identical (see the component doc comment for why) and only defines its
+ * own tokens for the handful of values that genuinely differ.
+ */
+
+.ds-search-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--font-family-base);
+}
+
+.ds-search-field__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: var(--spacing-2) var(--component-text-field-padding);
+}
+
+.ds-search-field__label {
+  color: var(--component-text-field-label-color);
+  font-size: var(--component-text-field-label-font-size);
+}
+
+.ds-search-field__detail {
+  color: var(--component-text-field-detail-color);
+  font-size: var(--component-text-field-label-font-size);
+}
+
+.ds-search-field__field {
+  display: flex;
+  align-items: center;
+  gap: var(--component-text-field-gap);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--component-text-field-padding);
+  background-color: var(--component-text-field-background);
+  border: 1px solid var(--component-text-field-border);
+  border-radius: var(--component-text-field-border-radius);
+  transition: border-color 150ms ease;
+}
+
+.ds-search-field__field:hover:not(.ds-search-field__field--disabled) {
+  border-color: var(--component-text-field-border-hover);
+}
+
+.ds-search-field__field--filled:hover:not(.ds-search-field__field--disabled) {
+  border-color: var(--component-search-field-border-hover-filled);
+}
+
+.ds-search-field__field:focus-within {
+  border-color: var(--component-text-field-border-focus);
+  outline: var(--component-text-field-focus-ring-width) solid
+    var(--component-text-field-focus-ring-color);
+  outline-offset: var(--component-text-field-focus-ring-offset);
+}
+
+.ds-search-field__field--error {
+  border-color: var(--component-text-field-border-error);
+}
+
+.ds-search-field__field--error:focus-within {
+  border-color: var(--component-text-field-border-error-focus);
+  outline-color: var(--component-text-field-focus-ring-color);
+}
+
+.ds-search-field__field--disabled {
+  background-color: var(--component-text-field-background-disabled);
+  border-color: var(--component-text-field-border-disabled);
+}
+
+.ds-search-field__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--component-text-field-icon-size);
+  height: var(--component-text-field-icon-size);
+  color: var(--component-text-field-placeholder-color);
+}
+
+.ds-search-field__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-search-field__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--component-text-field-font-size);
+  color: var(--component-text-field-text-color);
+}
+
+.ds-search-field__input::placeholder {
+  color: var(--component-text-field-placeholder-color);
+}
+
+.ds-search-field__input:disabled {
+  color: var(--component-text-field-text-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Hide the native browser search-input decorations so our own clear
+   button is the only one shown. */
+.ds-search-field__input::-webkit-search-cancel-button,
+.ds-search-field__input::-webkit-search-decoration {
+  appearance: none;
+}
+
+.ds-search-field__clear {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--component-search-field-clear-icon-size);
+  height: var(--component-search-field-clear-icon-size);
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--component-text-field-placeholder-color);
+  cursor: pointer;
+}
+
+.ds-search-field__clear:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+  border-radius: var(--border-radius-full);
+}
+
+.ds-search-field__clear svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-search-field__footer {
+  padding: 6px var(--component-text-field-padding) 0;
+  color: var(--component-text-field-footer-color);
+  font-size: var(--component-text-field-footer-font-size);
+}
+
+.ds-search-field__footer--error {
+  color: var(--component-search-field-footer-error-color);
+}

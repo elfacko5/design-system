@@ -1,0 +1,19 @@
+<!--
+  Loads the Inter typeface for Storybook previews.
+
+  dist/tokens.css declares `font-family: Inter, system-ui, sans-serif`, but
+  the token system only records intent — it doesn't ship the font file.
+  Without this, every browser silently falls back to its system font (e.g.
+  San Francisco on macOS), which is part of why components look subtly off
+  from Figma even once spacing/colors match.
+
+  Consuming applications need to load Inter themselves too — either via a
+  link tag like this one, or by installing @fontsource/inter and importing
+  the weights actually used by the token system (400, 500, 600, 700).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>

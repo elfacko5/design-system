@@ -1,0 +1,52 @@
+.ds-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--component-button-group-background);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--component-button-group-border-top);
+  padding-top: var(--component-button-group-padding-top);
+  font-family: var(--font-family-base);
+}
+
+.ds-button-group__pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--spacing-2) 0;
+}
+
+.ds-button-group__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-button-group-stack-gap);
+  width: 100%;
+  padding: 0 var(--component-button-group-stack-padding-x)
+    var(--component-button-group-stack-padding-bottom);
+  box-sizing: border-box;
+}
+
+.ds-button-group__stack > * {
+  width: 100%;
+}
+
+.ds-button-group__home-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--component-button-group-home-indicator-height);
+  box-sizing: border-box;
+  padding-top: var(--component-button-group-home-indicator-padding-top);
+  padding-bottom: var(--component-button-group-home-indicator-padding-bottom);
+}
+
+.ds-button-group__home-indicator-bar {
+  display: block;
+  width: var(--component-button-group-home-indicator-bar-width);
+  height: var(--component-button-group-home-indicator-bar-height);
+  border-radius: 9999px;
+  background-color: var(--component-button-group-home-indicator-bar-color);
+}

@@ -1,0 +1,67 @@
+.ds-segmented-control {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--component-segmented-control-height);
+  padding: var(--component-segmented-control-padding);
+  background-color: var(--component-segmented-control-background);
+  border-radius: var(--component-segmented-control-border-radius);
+  font-family: var(--font-family-base);
+}
+
+.ds-segmented-control__slot {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 100%;
+}
+
+.ds-segmented-control__thumb {
+  position: absolute;
+  inset: 0;
+  background-color: var(--component-segmented-control-thumb-background);
+  border: 0.5px solid var(--component-segmented-control-thumb-border);
+  border-radius: var(--component-segmented-control-thumb-border-radius);
+  box-shadow: var(--component-segmented-control-thumb-shadow);
+}
+
+.ds-segmented-control__separator {
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: var(--component-segmented-control-separator-color);
+}
+
+.ds-segmented-control__segment {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  appearance: none;
+  background: transparent;
+  border: none;
+  height: 100%;
+  padding: var(--component-segmented-control-segment-padding-y)
+    var(--component-segmented-control-segment-padding-x);
+  font-family: inherit;
+  font-size: var(--component-segmented-control-font-size);
+  font-weight: var(--component-segmented-control-font-weight-default);
+  color: var(--component-segmented-control-text-color);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ds-segmented-control__segment:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: -1px;
+  border-radius: var(--component-segmented-control-thumb-border-radius);
+}
+
+.ds-segmented-control__segment--selected {
+  font-weight: var(--component-segmented-control-font-weight-selected);
+  color: var(--component-segmented-control-text-color-selected);
+}

@@ -1,0 +1,53 @@
+.ds-chat-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--component-chat-bubble-max-width);
+  padding: var(--component-chat-bubble-padding-y) var(--component-chat-bubble-padding-x);
+  border-width: var(--border-width-thin);
+  border-style: solid;
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+  font-size: var(--component-chat-bubble-font-size);
+  line-height: var(--component-chat-bubble-line-height);
+  word-break: break-word;
+}
+
+.ds-chat-bubble--user {
+  background-color: var(--component-chat-bubble-user-background);
+  border-color: var(--component-chat-bubble-user-border);
+  color: var(--component-chat-bubble-user-text);
+}
+
+.ds-chat-bubble--assistant {
+  background-color: var(--component-chat-bubble-assistant-background);
+  border-color: var(--component-chat-bubble-assistant-border);
+  color: var(--component-chat-bubble-assistant-text);
+}
+
+/* User bubbles sit on the right — the tail corner is on the right side. */
+.ds-chat-bubble--user.ds-chat-bubble--tail-bottom {
+  border-radius: var(--component-chat-bubble-border-radius-round)
+    var(--component-chat-bubble-border-radius-round) var(--component-chat-bubble-border-radius-tail)
+    var(--component-chat-bubble-border-radius-round);
+}
+
+.ds-chat-bubble--user.ds-chat-bubble--tail-top {
+  border-radius: var(--component-chat-bubble-border-radius-round)
+    var(--component-chat-bubble-border-radius-tail) var(--component-chat-bubble-border-radius-round)
+    var(--component-chat-bubble-border-radius-round);
+}
+
+/* Assistant bubbles are mirrored onto the left — the tail corner is on the left side. */
+.ds-chat-bubble--assistant.ds-chat-bubble--tail-bottom {
+  border-radius: var(--component-chat-bubble-border-radius-round)
+    var(--component-chat-bubble-border-radius-round)
+    var(--component-chat-bubble-border-radius-round) var(--component-chat-bubble-border-radius-tail);
+}
+
+.ds-chat-bubble--assistant.ds-chat-bubble--tail-top {
+  border-radius: var(--component-chat-bubble-border-radius-tail)
+    var(--component-chat-bubble-border-radius-round)
+    var(--component-chat-bubble-border-radius-round)
+    var(--component-chat-bubble-border-radius-round);
+}

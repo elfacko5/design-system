@@ -1,0 +1,74 @@
+.ds-dialog__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--component-dialog-overlay-color);
+}
+
+.ds-dialog {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: var(--component-dialog-width);
+  gap: var(--component-dialog-gap);
+  background-color: var(--component-dialog-background);
+  border: 1px solid var(--component-dialog-border);
+  border-radius: var(--component-dialog-border-radius);
+  padding: var(--component-dialog-padding-top) var(--component-dialog-padding-x)
+    var(--component-dialog-padding-bottom);
+  font-family: var(--font-family-base);
+}
+
+/* The dialog container itself is focused programmatically on open (for
+   screen readers), not via keyboard, so it doesn't need a visible focus
+   ring — the browser's default outline isn't part of Figma's design and
+   focus should visibly land on the actionable buttons inside instead. */
+.ds-dialog:focus {
+  outline: none;
+}
+
+.ds-dialog--centered {
+  align-items: center;
+  text-align: center;
+}
+
+.ds-dialog--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ds-dialog__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-dialog-text-gap);
+  width: 100%;
+}
+
+.ds-dialog__title {
+  margin: 0;
+  color: var(--component-dialog-title-color);
+  font-size: var(--component-dialog-title-font-size);
+  font-weight: var(--component-dialog-title-font-weight);
+  line-height: var(--component-dialog-title-line-height);
+}
+
+.ds-dialog__description {
+  margin: 0;
+  color: var(--component-dialog-description-color);
+  font-size: var(--component-dialog-description-font-size);
+  line-height: var(--component-dialog-description-line-height);
+}
+
+.ds-dialog__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-dialog-button-group-gap);
+  width: 100%;
+}
+
+.ds-dialog__buttons > * {
+  width: 100%;
+}

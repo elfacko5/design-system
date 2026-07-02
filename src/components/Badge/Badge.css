@@ -1,0 +1,61 @@
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-badge-gap);
+  box-sizing: border-box;
+  padding: var(--component-badge-padding-y) var(--component-badge-padding-x);
+  border-radius: var(--component-badge-border-radius);
+  font-family: var(--font-family-base);
+  font-size: var(--component-badge-font-size);
+  font-weight: var(--component-badge-font-weight);
+  line-height: var(--component-badge-line-height);
+  white-space: nowrap;
+}
+
+.ds-badge__icon {
+  display: flex;
+  align-items: center;
+}
+
+.ds-badge__icon svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+.ds-badge--dot {
+  padding: 0;
+  width: var(--component-badge-dot-size);
+  height: var(--component-badge-dot-size);
+}
+
+.ds-badge--info {
+  background-color: var(--component-badge-info);
+  color: var(--component-badge-info-text);
+}
+
+.ds-badge--positive {
+  background-color: var(--component-badge-positive);
+  color: var(--component-badge-positive-text);
+}
+
+.ds-badge--warning {
+  background-color: var(--component-badge-warning);
+  color: var(--component-badge-warning-text);
+}
+
+.ds-badge--danger {
+  background-color: var(--component-badge-danger);
+  color: var(--component-badge-danger-text);
+}
+
+.ds-badge--neutral {
+  background-color: var(--component-badge-neutral);
+  color: var(--component-badge-neutral-text);
+}
+
+.ds-badge--ghost {
+  background-color: var(--component-badge-ghost);
+  color: var(--component-badge-ghost-text);
+}

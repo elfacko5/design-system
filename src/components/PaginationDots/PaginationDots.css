@@ -1,0 +1,23 @@
+.ds-pagination-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--component-pagination-dots-arrow-gap);
+}
+
+.ds-pagination-dots__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--component-pagination-dots-dot-gap);
+}
+
+.ds-pagination-dots__dot {
+  display: block;
+  width: var(--component-pagination-dots-dot-size);
+  height: var(--component-pagination-dots-dot-size);
+  border-radius: 9999px;
+  background-color: var(--component-pagination-dots-dot-color-inactive);
+}
+
+.ds-pagination-dots__dot--active {
+  background-color: var(--component-pagination-dots-dot-color-active);
+}

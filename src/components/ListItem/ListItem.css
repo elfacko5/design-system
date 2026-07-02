@@ -1,0 +1,178 @@
+/*
+ * Rebuilt from Figma node 40002016:4493 ("List item", Version 2).
+ * Key things that differ from a "generic" list row, all pulled from that
+ * frame rather than guessed:
+ *   - There is no hover state, only Default / Pressed / Disabled / Focus.
+ *   - Selected rows show a checkmark instead of the Detail + chevron.
+ *   - The focus ring is blue (#3b82f6), not the shared indigo
+ *     --color-border-focus used by Button/Checkbox/Toggle.
+ */
+
+.ds-list-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ds-list-item--divider {
+  border-bottom: var(--component-list-item-divider-width) solid
+    var(--component-list-item-divider-color);
+}
+
+.ds-list-item--divider:last-child {
+  border-bottom: none;
+}
+
+.ds-list-item--container:not(:last-child) {
+  margin-bottom: var(--component-list-item-container-gap);
+}
+
+.ds-list-item__row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--component-list-item-min-height);
+  padding: var(--component-list-item-padding-y) var(--component-list-item-padding-x);
+  box-sizing: border-box;
+  border: none;
+  background-color: var(--component-list-item-background-default);
+  font-family: var(--font-family-base);
+  text-align: left;
+  cursor: default;
+  position: relative;
+}
+
+button.ds-list-item__row {
+  cursor: pointer;
+}
+
+/* Flat rows (Has Container: False) only get a background change on press —
+   there is no hover state in the source component. */
+button.ds-list-item__row:not(.ds-list-item__row--container):active {
+  background-color: var(--component-list-item-background-pressed);
+}
+
+button.ds-list-item__row:focus-visible {
+  outline: var(--border-width-medium) solid var(--component-list-item-focus-ring-color);
+  outline-offset: var(--border-width-medium);
+}
+
+.ds-list-item__row[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
+/* Boxed rows (Has Container: True) */
+.ds-list-item__row--container {
+  border: var(--border-width-thin) solid var(--component-list-item-container-border-default);
+  border-radius: var(--component-list-item-container-border-radius);
+}
+
+.ds-list-item__row--container.ds-list-item__row--selected {
+  border-color: var(--component-list-item-container-border-selected);
+}
+
+button.ds-list-item__row--container:active {
+  background-color: var(--component-list-item-background-pressed);
+  border-color: var(--component-list-item-container-border-pressed);
+}
+
+button.ds-list-item__row--container.ds-list-item__row--selected:active {
+  border-color: var(--component-list-item-container-border-pressed-selected);
+}
+
+.ds-list-item__row--container[aria-disabled='true'].ds-list-item__row--selected {
+  border-color: var(--component-list-item-container-border-disabled-selected);
+}
+
+.ds-list-item__leading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: var(--component-list-item-gap-icon-to-title);
+  padding: var(--component-list-item-leading-icon-padding);
+  border-radius: var(--component-list-item-leading-icon-border-radius);
+  background-color: var(--component-list-item-leading-icon-background);
+  color: var(--component-list-item-leading-icon-color);
+}
+
+.ds-list-item__leading svg {
+  width: var(--component-list-item-leading-icon-size);
+  height: var(--component-list-item-leading-icon-size);
+  display: block;
+}
+
+.ds-list-item__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-list-item__label {
+  color: var(--component-list-item-label-color);
+  font-size: var(--component-list-item-label-font-size);
+  font-weight: var(--component-list-item-label-font-weight);
+}
+
+.ds-list-item__row[aria-disabled='true'] .ds-list-item__label {
+  color: var(--component-list-item-label-color-disabled);
+}
+
+.ds-list-item__sublabel {
+  color: var(--component-list-item-sublabel-color);
+  font-size: var(--component-list-item-sublabel-font-size);
+  font-weight: var(--component-list-item-sublabel-font-weight);
+}
+
+.ds-list-item__trailing {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--component-list-item-gap-within-trailing);
+  margin-left: var(--component-list-item-gap-title-to-trailing);
+  color: var(--component-list-item-detail-color);
+}
+
+.ds-list-item__row[aria-disabled='true'] .ds-list-item__trailing {
+  color: var(--component-list-item-detail-color-disabled);
+}
+
+.ds-list-item__detail {
+  font-size: var(--component-list-item-label-font-size);
+  white-space: nowrap;
+}
+
+.ds-list-item__trailing svg {
+  width: var(--component-list-item-trailing-icon-size);
+  height: var(--component-list-item-trailing-icon-size);
+  display: block;
+}
+
+.ds-list-item__selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: var(--component-list-item-gap-title-to-trailing);
+  width: var(--component-list-item-selection-size);
+  height: var(--component-list-item-selection-size);
+  box-sizing: border-box;
+  border-radius: var(--component-list-item-selection-border-radius);
+  background-color: var(--component-list-item-selection-background);
+  color: var(--component-list-item-selection-check-color);
+}
+
+.ds-list-item__selection svg {
+  width: 80%;
+  height: 80%;
+  display: block;
+}
+
+button.ds-list-item__row:active .ds-list-item__selection {
+  background-color: var(--component-list-item-selection-background-pressed);
+}
+
+.ds-list-item__row[aria-disabled='true'] .ds-list-item__selection {
+  background-color: var(--component-list-item-selection-background-disabled);
+}

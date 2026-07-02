@@ -1,0 +1,51 @@
+.ds-tab-bar-item {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-tab-bar-item-gap);
+  width: var(--component-tab-bar-item-size);
+  height: var(--component-tab-bar-item-size);
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--component-tab-bar-item-label-color-unselected);
+  font-family: var(--font-family-base);
+  cursor: pointer;
+}
+
+.ds-tab-bar-item--selected {
+  color: var(--component-tab-bar-item-label-color-selected);
+}
+
+.ds-tab-bar-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--component-tab-bar-item-icon-size);
+  height: var(--component-tab-bar-item-icon-size);
+}
+
+.ds-tab-bar-item__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-tab-bar-item__label {
+  font-size: var(--component-tab-bar-item-label-font-size);
+  line-height: var(--component-tab-bar-item-label-line-height);
+  font-weight: var(--component-tab-bar-item-label-font-weight-unselected);
+  white-space: nowrap;
+}
+
+.ds-tab-bar-item--selected .ds-tab-bar-item__label {
+  font-weight: var(--component-tab-bar-item-label-font-weight-selected);
+}
+
+.ds-tab-bar-item:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: calc(-1 * var(--border-width-medium));
+}

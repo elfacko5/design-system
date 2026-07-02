@@ -1,0 +1,88 @@
+.ds-accordion {
+  box-sizing: border-box;
+  background-color: var(--color-background-default);
+  border: 1px solid var(--component-accordion-border);
+  border-radius: var(--component-accordion-border-radius);
+  overflow: hidden;
+  font-family: var(--font-family-base);
+}
+
+.ds-accordion__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: var(--component-accordion-header-gap);
+  padding: var(--component-accordion-header-padding);
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ds-accordion__header:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: calc(-1 * var(--border-width-medium));
+}
+
+.ds-accordion__leading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--component-accordion-leading-background);
+  padding: var(--component-accordion-leading-padding);
+  border-radius: var(--component-accordion-leading-border-radius);
+  width: var(--component-accordion-leading-icon-size);
+  height: var(--component-accordion-leading-icon-size);
+  box-sizing: content-box;
+}
+
+.ds-accordion__center {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-accordion__title {
+  color: var(--component-accordion-title-color);
+  font-size: var(--component-accordion-title-font-size);
+  font-weight: var(--component-accordion-title-font-weight);
+  line-height: var(--component-accordion-title-line-height);
+}
+
+.ds-accordion__subtitle {
+  display: flex;
+  align-items: center;
+  gap: var(--component-accordion-subtitle-gap);
+  color: var(--component-accordion-subtitle-color);
+  font-size: var(--component-accordion-subtitle-font-size);
+  line-height: var(--component-accordion-subtitle-line-height);
+}
+
+.ds-accordion__trailing {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--component-accordion-title-color);
+}
+
+.ds-accordion__chevron {
+  width: var(--component-accordion-chevron-size);
+  height: var(--component-accordion-chevron-size);
+  transition: transform 150ms ease;
+}
+
+.ds-accordion__chevron--expanded {
+  transform: rotate(180deg);
+}
+
+.ds-accordion__content {
+  padding: var(--component-accordion-content-padding);
+}
+
+.ds-accordion__content--flush {
+  padding: 0;
+}

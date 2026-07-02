@@ -1,0 +1,42 @@
+{
+  "font": {
+    "family": {
+      "base":    { "value": "Inter, system-ui, sans-serif", "type": "fontFamilies", "description": "Primary typeface — from Figma Button component" },
+      "heading": { "value": "Inter, system-ui, sans-serif", "type": "fontFamilies" },
+      "mono":    { "value": "JetBrains Mono, monospace", "type": "fontFamilies" }
+    },
+    "weight": {
+      "regular": { "value": "400", "type": "fontWeights" },
+      "medium":  { "value": "500", "type": "fontWeights", "description": "Button label weight — from Figma" },
+      "semibold":{ "value": "600", "type": "fontWeights" },
+      "bold":    { "value": "700", "type": "fontWeights" }
+    },
+    "size": {
+      "xs":   { "value": "12", "type": "fontSizes", "description": "Caption" },
+      "sm":   { "value": "14", "type": "fontSizes", "description": "Small body" },
+      "md":   { "value": "16", "type": "fontSizes", "description": "Base body — Button label size from Figma" },
+      "lg":   { "value": "18", "type": "fontSizes" },
+      "xl":   { "value": "20", "type": "fontSizes" },
+      "2xl":  { "value": "24", "type": "fontSizes" },
+      "3xl":  { "value": "30", "type": "fontSizes" },
+      "4xl":  { "value": "36", "type": "fontSizes" },
+      "5xl":  { "value": "48", "type": "fontSizes" }
+    },
+    "lineHeight": {
+      "none":    { "value": "1",    "type": "lineHeights" },
+      "tight":   { "value": "1.25", "type": "lineHeights" },
+      "snug":    { "value": "1.375","type": "lineHeights" },
+      "normal":  { "value": "1.5",  "type": "lineHeights", "description": "Button label line-height — 24px / 16px" },
+      "relaxed": { "value": "1.625","type": "lineHeights" },
+      "loose":   { "value": "2",    "type": "lineHeights" }
+    },
+    "letterSpacing": {
+      "tighter": { "value": "-0.05em", "type": "letterSpacing" },
+      "tight":   { "value": "-0.025em","type": "letterSpacing" },
+      "normal":  { "value": "0",       "type": "letterSpacing" },
+      "wide":    { "value": "0.025em", "type": "letterSpacing" },
+      "wider":   { "value": "0.05em",  "type": "letterSpacing" },
+      "widest":  { "value": "0.1em",   "type": "letterSpacing" }
+    }
+  }
+}

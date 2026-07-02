@@ -1,0 +1,45 @@
+.ds-toggle {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--component-toggle-width);
+  height: var(--component-toggle-height);
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  border-radius: var(--component-toggle-border-radius);
+  background-color: var(--component-toggle-track-off);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.ds-toggle--checked {
+  background-color: var(--component-toggle-track-on);
+}
+
+.ds-toggle:disabled {
+  background-color: var(--component-toggle-track-disabled);
+  cursor: not-allowed;
+}
+
+.ds-toggle:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+}
+
+.ds-toggle__thumb {
+  width: var(--component-toggle-thumb-size);
+  height: var(--component-toggle-thumb-size);
+  margin-left: var(--spacing-1);
+  border-radius: var(--border-radius-full);
+  background-color: var(--component-toggle-thumb-color);
+  transition: transform 150ms ease;
+}
+
+.ds-toggle--checked .ds-toggle__thumb {
+  transform: translateX(
+    calc(
+      var(--component-toggle-width) - var(--component-toggle-thumb-size) - (var(--spacing-1) * 2)
+    )
+  );
+}

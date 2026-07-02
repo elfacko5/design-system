@@ -1,0 +1,149 @@
+/**
+ * Button styles.
+ *
+ * Every value below is a `var(--...)` reference into dist/tokens.css.
+ * Do not add hex colors or raw pixel values here — add or adjust a token
+ * in tokens/ and rebuild instead (`npm run build`).
+ */
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-button-gap);
+  box-sizing: border-box;
+  appearance: none;
+  border-style: solid;
+  border-width: var(--border-width-thin);
+  border-radius: var(--component-button-border-radius);
+  font-family: var(--font-family-base);
+  font-weight: var(--component-button-font-weight);
+  line-height: var(--component-button-line-height);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.ds-button:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+}
+
+.ds-button:disabled,
+.ds-button[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
+/* ── Sizes ─────────────────────────────────────────────────────────────── */
+
+.ds-button--sm {
+  min-height: var(--component-button-height-sm);
+  padding: var(--component-button-padding-y-sm) var(--component-button-padding-x-sm);
+  font-size: var(--font-size-sm);
+}
+
+.ds-button--md {
+  min-height: var(--component-button-height-md);
+  padding: var(--component-button-padding-y-md) var(--component-button-padding-x-md);
+  font-size: var(--component-button-font-size);
+}
+
+.ds-button--lg {
+  min-height: var(--component-button-height-lg);
+  padding: var(--component-button-padding-y-lg) var(--component-button-padding-x-lg);
+  font-size: var(--font-size-lg);
+}
+
+/* ── Primary ───────────────────────────────────────────────────────────── */
+
+.ds-button--primary {
+  background-color: var(--component-button-primary-background);
+  border-color: var(--component-button-primary-border);
+  color: var(--component-button-primary-text);
+}
+
+.ds-button--primary:hover:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--component-button-primary-background-hover);
+  border-color: var(--component-button-primary-background-hover);
+}
+
+.ds-button--primary:active:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--component-button-primary-background-pressed);
+  border-color: var(--component-button-primary-background-pressed);
+}
+
+.ds-button--primary:disabled,
+.ds-button--primary[aria-disabled='true'] {
+  background-color: var(--component-button-primary-background-disabled);
+  border-color: var(--component-button-primary-background-disabled);
+  color: var(--component-button-primary-text-disabled);
+}
+
+/* ── Secondary ─────────────────────────────────────────────────────────── */
+
+.ds-button--secondary {
+  background-color: var(--component-button-secondary-background);
+  border-color: var(--component-button-secondary-border);
+  color: var(--component-button-secondary-text);
+}
+
+.ds-button--secondary:hover:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--component-button-secondary-background-hover);
+}
+
+.ds-button--secondary:active:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--component-button-secondary-background-pressed);
+}
+
+.ds-button--secondary:disabled,
+.ds-button--secondary[aria-disabled='true'] {
+  /* Component tier has no secondary disabled token yet — fall back one tier
+     to the semantic layer per CLAUDE.md's tiering rule. */
+  background-color: var(--color-action-secondary-disabled);
+  border-color: var(--color-border-disabled);
+  color: var(--color-text-disabled);
+}
+
+/* ── Ghost ─────────────────────────────────────────────────────────────── */
+
+.ds-button--ghost {
+  background-color: var(--component-button-ghost-background);
+  border-color: var(--component-button-ghost-border);
+  color: var(--component-button-ghost-text);
+}
+
+.ds-button--ghost:hover:not(:disabled):not([aria-disabled='true']),
+.ds-button--ghost:active:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--component-button-ghost-background-hover);
+}
+
+.ds-button--ghost:disabled,
+.ds-button--ghost[aria-disabled='true'] {
+  /* No component-tier ghost disabled token — fall back to semantic text-disabled. */
+  color: var(--color-text-disabled);
+}
+
+/* ── Danger ────────────────────────────────────────────────────────────── */
+
+.ds-button--danger {
+  background-color: var(--component-button-danger-background);
+  border-color: var(--component-button-danger-border);
+  color: var(--component-button-danger-text);
+}
+
+.ds-button--danger:hover:not(:disabled):not([aria-disabled='true']),
+.ds-button--danger:active:not(:disabled):not([aria-disabled='true']) {
+  background-color: var(--component-button-danger-background-hover);
+  border-color: var(--component-button-danger-background-hover);
+}
+
+.ds-button--danger:disabled,
+.ds-button--danger[aria-disabled='true'] {
+  /* No component-tier danger disabled token — fall back to semantic layer. */
+  background-color: var(--color-action-danger-disabled);
+  border-color: var(--color-action-danger-disabled);
+  color: var(--color-text-disabled);
+}

@@ -1,0 +1,89 @@
+.ds-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.ds-checkbox__control {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  width: var(--component-checkbox-size);
+  height: var(--component-checkbox-size);
+}
+
+.ds-checkbox__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ds-checkbox__box {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: var(--component-checkbox-border-width);
+  border-radius: var(--component-checkbox-border-radius);
+  border-color: var(--component-checkbox-border-unchecked);
+  background-color: var(--component-checkbox-background-unchecked);
+  color: var(--component-checkbox-checkmark-color);
+  pointer-events: none;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.ds-checkbox__checkmark {
+  width: 70%;
+  height: 70%;
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 100ms ease,
+    transform 100ms ease;
+}
+
+.ds-checkbox__input:checked + .ds-checkbox__box {
+  background-color: var(--component-checkbox-background-checked);
+  border-color: var(--component-checkbox-border-checked);
+}
+
+.ds-checkbox__input:checked + .ds-checkbox__box .ds-checkbox__checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ds-checkbox__input:focus-visible + .ds-checkbox__box {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+}
+
+.ds-checkbox__input:disabled + .ds-checkbox__box {
+  background-color: var(--component-checkbox-background-disabled);
+  border-color: var(--component-checkbox-border-disabled);
+}
+
+.ds-checkbox__input:disabled {
+  cursor: not-allowed;
+}
+
+.ds-checkbox__input:disabled ~ .ds-checkbox__label {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.ds-checkbox__label {
+  font-family: var(--font-family-base);
+  font-size: var(--component-checkbox-label-font-size);
+  font-weight: var(--component-checkbox-label-font-weight);
+  color: var(--component-checkbox-label-color);
+  cursor: pointer;
+}

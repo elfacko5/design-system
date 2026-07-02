@@ -1,0 +1,84 @@
+.ds-sheet-top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--component-sheet-top-bar-background);
+  border-top-left-radius: var(--component-sheet-top-bar-border-radius-top);
+  border-top-right-radius: var(--component-sheet-top-bar-border-radius-top);
+  font-family: var(--font-family-base);
+  overflow: hidden;
+}
+
+.ds-sheet-top-bar__grabber-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: var(--component-sheet-top-bar-grabber-padding-top);
+  padding-bottom: var(--component-sheet-top-bar-grabber-padding-bottom);
+}
+
+.ds-sheet-top-bar__grabber {
+  width: var(--component-sheet-top-bar-grabber-width);
+  height: var(--component-sheet-top-bar-grabber-height);
+  border-radius: var(--component-sheet-top-bar-grabber-border-radius);
+  background-color: var(--component-sheet-top-bar-grabber-color);
+}
+
+.ds-sheet-top-bar__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--component-sheet-top-bar-row-height);
+  box-sizing: border-box;
+  padding-left: var(--component-sheet-top-bar-content-padding-left);
+  padding-right: var(--component-sheet-top-bar-content-padding-right);
+}
+
+.ds-sheet-top-bar__row--left {
+  justify-content: space-between;
+}
+
+.ds-sheet-top-bar__row--center {
+  justify-content: flex-end;
+}
+
+.ds-sheet-top-bar__title {
+  color: var(--component-sheet-top-bar-title-color);
+  font-size: var(--component-sheet-top-bar-title-font-size);
+  font-weight: var(--component-sheet-top-bar-title-font-weight);
+  line-height: var(--component-sheet-top-bar-title-line-height);
+  white-space: nowrap;
+}
+
+.ds-sheet-top-bar__row--center .ds-sheet-top-bar__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ds-sheet-top-bar__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--component-sheet-top-bar-close-icon-size);
+  height: var(--component-sheet-top-bar-close-icon-size);
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--component-sheet-top-bar-title-color);
+  cursor: pointer;
+}
+
+.ds-sheet-top-bar__close svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-sheet-top-bar__close:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+}

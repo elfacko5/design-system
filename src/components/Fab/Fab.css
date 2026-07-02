@@ -1,0 +1,60 @@
+.ds-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-fab-gap);
+  height: var(--component-fab-height);
+  min-width: var(--component-fab-min-width);
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  border-radius: var(--component-fab-border-radius);
+  background-color: var(--component-fab-background);
+  color: var(--component-fab-text-color);
+  font-family: var(--font-family-base);
+  font-size: var(--component-fab-font-size);
+  font-weight: var(--component-fab-font-weight);
+  cursor: pointer;
+}
+
+.ds-fab--labeled {
+  padding: 0 var(--component-fab-padding-x-with-label);
+}
+
+.ds-fab:active:not(:disabled) {
+  background-color: var(--component-fab-background-pressed);
+}
+
+.ds-fab:disabled {
+  background-color: var(--component-fab-background-disabled);
+  cursor: not-allowed;
+}
+
+.ds-fab:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+}
+
+.ds-fab__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--component-fab-icon-size);
+  height: var(--component-fab-icon-size);
+  color: var(--component-fab-icon-color);
+  transition: transform 150ms ease;
+}
+
+.ds-fab__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-fab--selected .ds-fab__icon {
+  transform: rotate(45deg);
+}
+
+.ds-fab__label {
+  white-space: nowrap;
+}

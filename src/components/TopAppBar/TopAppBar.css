@@ -1,0 +1,112 @@
+.ds-top-app-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--component-top-app-bar-background);
+  font-family: var(--font-family-base);
+}
+
+.ds-top-app-bar--bordered {
+  border-bottom: 1px solid var(--component-top-app-bar-bottom-border-color);
+}
+
+.ds-top-app-bar__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--component-top-app-bar-height);
+  box-sizing: border-box;
+  padding-left: var(--component-top-app-bar-content-padding-left);
+  padding-right: var(--component-top-app-bar-content-padding-right);
+}
+
+.ds-top-app-bar__leading {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-top-app-bar__back {
+  display: flex;
+  align-items: center;
+  gap: var(--component-top-app-bar-leading-gap);
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--component-top-app-bar-leading-label-color);
+}
+
+.ds-top-app-bar__back:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+}
+
+.ds-top-app-bar__back-icon {
+  display: flex;
+  align-items: center;
+  width: var(--component-top-app-bar-back-icon-size);
+  height: var(--component-top-app-bar-back-icon-size);
+}
+
+.ds-top-app-bar__back-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ds-top-app-bar__back-label {
+  font-size: var(--component-top-app-bar-leading-label-font-size);
+}
+
+.ds-top-app-bar__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--component-top-app-bar-title-color);
+  font-size: var(--component-top-app-bar-title-font-size);
+  font-weight: var(--component-top-app-bar-title-font-weight);
+  white-space: nowrap;
+}
+
+.ds-top-app-bar__trailing {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--component-top-app-bar-trailing-gap);
+  flex: 1;
+}
+
+.ds-top-app-bar__progress-row {
+  padding: 0 var(--component-top-app-bar-progress-bar-padding-x);
+  box-sizing: border-box;
+}
+
+.ds-top-app-bar__progress-track {
+  width: 100%;
+  height: var(--component-top-app-bar-progress-bar-height);
+  border-radius: var(--component-top-app-bar-progress-bar-border-radius);
+  background-color: var(--component-top-app-bar-progress-bar-track-color);
+  overflow: hidden;
+}
+
+.ds-top-app-bar__progress-fill {
+  height: 100%;
+  border-radius: var(--component-top-app-bar-progress-bar-border-radius);
+  background-color: var(--component-top-app-bar-progress-bar-fill-color);
+  transition: width 0.2s ease;
+}
+
+.ds-top-app-bar__heading-row {
+  padding: var(--component-top-app-bar-expanded-heading-padding-y)
+    var(--component-top-app-bar-expanded-heading-padding-x);
+}
+
+.ds-top-app-bar__heading {
+  color: var(--component-top-app-bar-expanded-heading-color);
+  font-size: var(--component-top-app-bar-expanded-heading-font-size);
+  font-weight: var(--component-top-app-bar-expanded-heading-font-weight);
+  line-height: var(--component-top-app-bar-expanded-heading-line-height);
+}

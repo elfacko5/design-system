@@ -1,0 +1,61 @@
+.ds-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: var(--component-card-background);
+  border: 1px solid var(--component-card-border);
+  border-radius: var(--component-card-border-radius);
+  overflow: hidden;
+}
+
+.ds-card__media {
+  height: var(--component-card-media-height);
+  overflow: hidden;
+}
+
+.ds-card__media img,
+.ds-card__media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ds-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-card-gap);
+  padding: var(--component-card-padding-top) var(--component-card-padding-x)
+    var(--component-card-padding-bottom);
+}
+
+.ds-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--component-card-content-gap);
+}
+
+.ds-card__label {
+  color: var(--component-card-label-color);
+  font-family: var(--font-family-base);
+  font-size: var(--component-card-label-font-size);
+}
+
+.ds-card__headline {
+  color: var(--component-card-headline-color);
+  font-family: var(--font-family-base);
+  font-size: var(--component-card-headline-font-size);
+  font-weight: var(--component-card-headline-font-weight);
+}
+
+.ds-card__description {
+  color: var(--component-card-description-color);
+  font-family: var(--font-family-base);
+  font-size: var(--component-card-description-font-size);
+}
+
+.ds-card__buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--component-card-button-gap);
+}

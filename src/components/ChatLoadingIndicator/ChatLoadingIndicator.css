@@ -1,0 +1,42 @@
+.ds-chat-loading-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--component-chat-loading-indicator-gap);
+  padding: var(--component-chat-loading-indicator-padding);
+}
+
+.ds-chat-loading-indicator__dot {
+  width: var(--component-chat-loading-indicator-dot-size);
+  height: var(--component-chat-loading-indicator-dot-size);
+  border-radius: var(--border-radius-full);
+  background-color: var(--component-chat-loading-indicator-dot-color);
+  opacity: 0.3;
+  animation: ds-chat-loading-indicator-pulse
+    var(--component-chat-loading-indicator-animation-duration) ease-in-out infinite;
+}
+
+.ds-chat-loading-indicator__dot:nth-child(2) {
+  animation-delay: calc(var(--component-chat-loading-indicator-animation-duration) / 3);
+}
+
+.ds-chat-loading-indicator__dot:nth-child(3) {
+  animation-delay: calc(var(--component-chat-loading-indicator-animation-duration) / 3 * 2);
+}
+
+@keyframes ds-chat-loading-indicator-pulse {
+  0%,
+  80%,
+  100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-chat-loading-indicator__dot {
+    animation: none;
+    opacity: 0.7;
+  }
+}

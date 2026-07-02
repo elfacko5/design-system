@@ -1,0 +1,197 @@
+.ds-icon-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  appearance: none;
+  border-style: solid;
+  border-width: var(--border-width-thin);
+  border-radius: var(--component-icon-button-border-radius);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.ds-icon-button:focus-visible {
+  outline: var(--border-width-medium) solid var(--color-border-focus);
+  outline-offset: var(--border-width-medium);
+}
+
+.ds-icon-button:disabled {
+  cursor: not-allowed;
+}
+
+.ds-icon-button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-icon-button__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Sizes ─────────────────────────────────────────────────────────────── */
+
+.ds-icon-button--default {
+  width: var(--component-icon-button-size-default);
+  height: var(--component-icon-button-size-default);
+  padding: var(--component-icon-button-padding-default);
+}
+
+.ds-icon-button--default .ds-icon-button__icon {
+  width: var(--component-icon-button-icon-size-default);
+  height: var(--component-icon-button-icon-size-default);
+}
+
+.ds-icon-button--small {
+  width: var(--component-icon-button-size-small);
+  height: var(--component-icon-button-size-small);
+  padding: var(--component-icon-button-padding-small);
+}
+
+.ds-icon-button--small .ds-icon-button__icon {
+  width: var(--component-icon-button-icon-size-small);
+  height: var(--component-icon-button-icon-size-small);
+}
+
+/* ── Primary ───────────────────────────────────────────────────────────── */
+
+.ds-icon-button--primary {
+  background-color: var(--component-icon-button-primary-background);
+  border-color: var(--component-icon-button-primary-background);
+  color: var(--component-icon-button-primary-icon-color);
+}
+
+.ds-icon-button--primary:hover:not(:disabled) {
+  background-color: var(--component-icon-button-primary-background-hover);
+  border-color: var(--component-icon-button-primary-background-hover);
+}
+
+.ds-icon-button--primary:active:not(:disabled) {
+  background-color: var(--component-icon-button-primary-background-pressed);
+  border-color: var(--component-icon-button-primary-background-pressed);
+}
+
+.ds-icon-button--primary:disabled {
+  background-color: var(--component-icon-button-primary-background-disabled);
+  border-color: var(--component-icon-button-primary-background-disabled);
+}
+
+.ds-icon-button--primary.ds-icon-button--danger {
+  background-color: var(--component-icon-button-danger-primary-background);
+  border-color: var(--component-icon-button-danger-primary-background);
+}
+
+.ds-icon-button--primary.ds-icon-button--danger:hover:not(:disabled) {
+  background-color: var(--component-icon-button-danger-primary-background-hover);
+  border-color: var(--component-icon-button-danger-primary-background-hover);
+}
+
+.ds-icon-button--primary.ds-icon-button--danger:active:not(:disabled) {
+  background-color: var(--component-icon-button-danger-primary-background-pressed);
+  border-color: var(--component-icon-button-danger-primary-background-pressed);
+}
+
+.ds-icon-button--primary.ds-icon-button--danger:disabled {
+  background-color: var(--component-icon-button-danger-primary-background-disabled);
+  border-color: var(--component-icon-button-danger-primary-border-disabled);
+}
+
+/* ── Secondary ─────────────────────────────────────────────────────────── */
+
+.ds-icon-button--secondary {
+  background-color: var(--component-icon-button-secondary-background);
+  border-color: var(--component-icon-button-secondary-border);
+  color: var(--component-icon-button-secondary-icon-color);
+}
+
+.ds-icon-button--secondary:hover:not(:disabled) {
+  background-color: var(--component-icon-button-secondary-background-hover);
+}
+
+.ds-icon-button--secondary:disabled {
+  background-color: var(--component-icon-button-secondary-background-disabled);
+  border-color: var(--component-icon-button-secondary-border-disabled);
+}
+
+/* ── Elevated ──────────────────────────────────────────────────────────── */
+
+.ds-icon-button--elevated {
+  background-color: var(--component-icon-button-elevated-background);
+  border-color: var(--component-icon-button-elevated-border);
+  color: var(--component-icon-button-elevated-icon-color);
+}
+
+.ds-icon-button--elevated:hover:not(:disabled) {
+  background-color: var(--component-icon-button-elevated-background-hover);
+}
+
+.ds-icon-button--elevated:disabled {
+  background-color: var(--component-icon-button-elevated-background-disabled);
+  border-color: var(--component-icon-button-elevated-border-disabled);
+}
+
+/* ── Ghost ─────────────────────────────────────────────────────────────── */
+
+.ds-icon-button--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--component-icon-button-ghost-icon-color);
+}
+
+.ds-icon-button--ghost:hover:not(:disabled) {
+  background-color: var(--component-icon-button-ghost-background-hover);
+  border-color: var(--component-icon-button-ghost-background-hover);
+}
+
+.ds-icon-button--ghost:disabled {
+  color: var(--component-icon-button-ghost-icon-color-disabled);
+}
+
+.ds-icon-button--ghost.ds-icon-button--danger {
+  color: var(--component-icon-button-danger-ghost-icon-color);
+}
+
+.ds-icon-button--ghost.ds-icon-button--danger:hover:not(:disabled) {
+  background-color: var(--component-icon-button-danger-ghost-background-hover);
+  border-color: var(--component-icon-button-danger-ghost-background-hover);
+}
+
+.ds-icon-button--ghost.ds-icon-button--danger:disabled {
+  color: var(--component-icon-button-ghost-icon-color-disabled);
+}
+
+/* ── Badge ─────────────────────────────────────────────────────────────── */
+
+.ds-icon-button__badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--component-icon-button-badge-size);
+  height: var(--component-icon-button-badge-size);
+  padding: 0 4px;
+  border-radius: 9999px;
+  background-color: var(--component-icon-button-badge-background);
+  color: var(--component-icon-button-badge-text-color);
+  font-family: var(--font-family-base);
+  font-size: var(--component-icon-button-badge-font-size);
+  font-weight: var(--font-weight-medium);
+  box-sizing: border-box;
+}
+
+.ds-icon-button--default .ds-icon-button__badge {
+  top: calc(-1 * var(--component-icon-button-badge-offset-default));
+  right: calc(-1 * var(--component-icon-button-badge-offset-default));
+}
+
+.ds-icon-button--small .ds-icon-button__badge {
+  top: calc(-1 * var(--component-icon-button-badge-offset-small));
+  right: calc(-1 * var(--component-icon-button-badge-offset-small));
+}
