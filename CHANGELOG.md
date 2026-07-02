@@ -6,13 +6,6 @@ this project follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-### Added
-
-- `prepublishOnly` script (build + typecheck + test + build:lib) as a guard against publishing a broken build.
-- `.github/workflows/release.yml` — tag-triggered build/test/publish workflow (publishing itself stays inert until `private: true` is removed and an `NPM_TOKEN` secret is added).
-- "Releasing" section in `README.md` documenting the version/tag/publish process.
-- `TopAppBar` gained an optional `progress` prop (thin progress track under the title row), sourced from the Figma "Navigation" pattern page's "Hierarchy Level 2 with progress bar" config.
-
 ## [0.1.0] - 2026-07-02
 
 Initial release. 34 components, sourced from the team's Figma file
@@ -33,6 +26,11 @@ light/dark theme support.
 - Vitest + Testing Library test suite (one file per component).
 - ESLint (flat config, TypeScript + React + Hooks rules) and Prettier.
 - GitHub Actions CI: token build, typecheck, test, library build, Storybook build.
+- `prepublishOnly` script (build + typecheck + test + build:lib) as a guard against publishing a broken build.
+- `.github/workflows/release.yml` — tag-triggered build/test/publish workflow (publishing itself stays inert until `private: true` is removed and an `NPM_TOKEN` secret is added).
+- "Releasing" section in `README.md` documenting the version/tag/publish process.
+- `TopAppBar` gained an optional `progress` prop (thin progress track under the title row), sourced from the Figma "Navigation" pattern page's "Hierarchy Level 2 with progress bar" config.
+- A Figma Variables collection ("Design Tokens (from code)") synced from the semantic token tier, giving designers a Light/Dark mode toggle in Figma that matches `tokens.css` / `tokens.dark.css`.
 
 ### Fixed
 
@@ -48,6 +46,8 @@ light/dark theme support.
 - `Picker` rendered as inert, non-interactive markup despite representing a
   clickable date/time trigger; its segments are now real, keyboard-accessible
   buttons.
+- `actions/checkout` and `actions/setup-node` bumped to v6 in CI/release
+  workflows to clear a Node 20 runner-deprecation warning.
 
 ### Known limitations
 
@@ -55,9 +55,6 @@ light/dark theme support.
   reproduced — out of scope for a web component library.
 - `Radio`'s border/fill colors are inferred, not pixel-verified against Figma.
 - `TabBar`'s "with plus" raised center-button variant isn't implemented.
-- `npm test`, `npm run build:lib`, and `npm run build-storybook` haven't been
-  verified from every environment this project was built in — run them
-  locally before your first release to confirm a clean pipeline.
 
-[Unreleased]: https://example.com/compare/v0.1.0...HEAD
-[0.1.0]: https://example.com/releases/tag/v0.1.0
+[Unreleased]: https://github.com/elfacko5/design-system/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/elfacko5/design-system/releases/tag/v0.1.0
