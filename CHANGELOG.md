@@ -6,6 +6,29 @@ this project follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- `tokens/semantic/tokens.json`: `text.primary` and `text.secondary` corrected
+  to `neutral.800`/`neutral.500` (were `neutral.900`/`neutral.600`) to match
+  the real Figma title/subtitle text values, found while wiring up Figma
+  variable dark-mode bindings.
+
+### Changed (Figma)
+
+- Added a `Dark` mode directly to the existing `semantic` Figma variable
+  collection (rather than maintaining a separate standalone collection),
+  covering `color/surface/*`, `color/action/*` (brand, neutral, danger), and
+  five new theme-adaptive text variables (`color/text/primary`, `secondary`,
+  `muted`, `disabled`, `inverse`) that didn't exist before.
+- Rebound thousands of previously-hardcoded fill/stroke/text colors across
+  all 34 shipped components to these semantic variables, so selecting a
+  frame and toggling "Apply variable mode" to Dark now actually reflects the
+  real dark theme. Status colors (danger/warning/success/info), brand
+  accents, and decorative/demo-placeholder content were intentionally left
+  untouched, matching the same invariance already used on the code side.
+- Removed the standalone "Design Tokens (from code)" collection (40
+  variables) — superseded by the `semantic` collection's own Dark mode.
+
 ## [0.1.0] - 2026-07-02
 
 Initial release. 34 components, sourced from the team's Figma file
